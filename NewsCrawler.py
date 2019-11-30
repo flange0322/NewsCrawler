@@ -75,5 +75,5 @@ class News_Crawler:
 
 if __name__ == '__main__':
     test = News_Crawler('https://sports.ettoday.net/news/1572327')
-    tmp = test.getNewsContent('https://sports.ettoday.net/news/1572327')
+    tmp = test.getNewsContent('https://health.ettoday.net/news/1591214?redirect=1')
     print(tmp)

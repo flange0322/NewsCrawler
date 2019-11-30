@@ -46,7 +46,7 @@ threadForCrawlerExecutor = threading.Thread(target = crawlerExecutor)
 threadForCrawlerExecutor.setDaemon(True)
 threadForCrawlerExecutor.start()
 
-ipPort = ('192.168.43.98',1194)
+ipPort = ('0.0.0.0',1194)
     
 sk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 

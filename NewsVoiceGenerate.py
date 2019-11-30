@@ -29,8 +29,7 @@ def voiceGenerate(sentence,fileName,filePath):
     try:
         newsTTS = gTTS(sentence, lang = 'zh-tw') 
         newsTTS.save("%s.mp3" % os.path.join(filePath,fileName))
+        print('Generate Succeeded.')
+        print()
     except:
         print('Have a Path Error. Make Sure the fileName.')
-
-    print('Generate Succeeded.')
-    print()

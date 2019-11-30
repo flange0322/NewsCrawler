@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-import os,socket
+import os,socket,time
 
 def client(idNumber,category):
-    ipPort = ('192.168.0.3',1194)
+    timeStart = time.time()
+    ipPort = ('127.0.0.1',1194)
     
     sk = socket.socket()
     
@@ -37,7 +38,9 @@ def client(idNumber,category):
                              ('>' * int((has_sent / file_size) * 50),
                              float(has_sent / file_size) * 100), end = '\n')
             print("下載成功")
+            timeEnd = time.time()
+            print(timeEnd - timeStart)
             sk.close()
             break
         
-client(idNumber = 'RespeakerTester001',category = 'government')
+client(idNumber = 'RespeakerTester001',category = 'health')
