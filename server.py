@@ -30,9 +30,11 @@ def NewsServer():
                           ('>' * int((has_sent / file_size) * 50),
                           float(has_sent / file_size) * 100), end = '\n')
             print("傳送成功")
+            conn.close()
             break
         else:
             conn.sendall(bytes('byebye','utf-8'))
+            conn.close()
             break
 
 def crawlerExecutor():
@@ -46,7 +48,7 @@ threadForCrawlerExecutor = threading.Thread(target = crawlerExecutor)
 threadForCrawlerExecutor.setDaemon(True)
 threadForCrawlerExecutor.start()
 
-ipPort = ('0.0.0.0',1194)
+ipPort = ('192.168.0.4',1194)
     
 sk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
